@@ -13,8 +13,8 @@ void rev_string(char *s)
 		size++;
 
 	for (j = 0; j < size; j++)		
-	{				
-		temp = s[j];	
+	{		
+		temp = s[j];
 		s[j] = s[size - 1];
 		s[size - 1] = temp;
 		size--;
