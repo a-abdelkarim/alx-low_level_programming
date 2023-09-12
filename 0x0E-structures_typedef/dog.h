@@ -3,8 +3,8 @@
 
 /**
  * struct dog - dog class
- *
  */
+
 struct dog
 {
 	char *name;
