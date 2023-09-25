@@ -9,14 +9,14 @@
  * Return: the number of nodes
  *
  */
-size_t print_listint(const list_t *head)
+size_t print_listint(const list_t *h)
 {
     size_t count = 0;
 
     while (head != NULL)
     {
-        printf("%d\n", head->data);
-        head = head->next;
+        printf("%d\n", h->data);
+        h = h->next;
         count++;
     }
     return (count);
