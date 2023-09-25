@@ -19,6 +19,5 @@ size_t print_listint(const listint_t *h)
 	     	h = h->next; // Move to the next node
 	       	count++; // Increment the count
 	}
-
 	return (count); // Return the number of nodes
 }
