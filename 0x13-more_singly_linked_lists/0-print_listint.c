@@ -9,7 +9,7 @@
  * Return: the number of nodes
  *
  */
-size_t print_linked_list(const struct Node *head)
+size_t print_listint(const struct Node *head)
 {
     size_t count = 0;
 
