@@ -1,6 +1,6 @@
+#include "lists.h"
 #include <stdio.h>
 #include <stdlib.h>
-#include "lists.h"
 
 /**
  * _reallocate_list - Reallocate memory for an a list of pointers to nodes
