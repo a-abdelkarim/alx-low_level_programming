@@ -23,7 +23,7 @@ listint_t *find_listint_loop(listint_t *head)
 			break;
 		}
 	}
-	if (!slow || !fast|| !fast->next)
+	if (!slow || !fast || !fast->next)
 		return (NULL);
 	while (slow != fast)
 	{
