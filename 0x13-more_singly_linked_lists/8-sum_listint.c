@@ -6,7 +6,6 @@
  *
  * Return: sum of all the data in the list
  */
-
 int sum_listint(listint_t *head)
 {
 	int sum = 0;
