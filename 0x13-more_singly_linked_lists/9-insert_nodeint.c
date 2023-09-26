@@ -2,13 +2,14 @@
 #include <stdlib.h>
 
 /**
- * insert_nodeint_at_index - Insert a new node at a given postition in a list of type listint_t.
- * @head: Pointer to pointer of the head of the list
- * @idx: New node index
- * @n: int data to be stored in the new node
+ * insert_nodeint_at_index - inserting a new node at agiven postion
+ * @head: double pointer
+ * @idx: index of the node
+ * @n: new node value
  *
- * Return: Adrress of the new node
+ * Return: the address of new node
  */
+
 listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 {
 	unsigned int i;
