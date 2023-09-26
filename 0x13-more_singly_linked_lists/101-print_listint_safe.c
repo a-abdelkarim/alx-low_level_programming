@@ -43,7 +43,6 @@ size_t print_listint_safe(const listint_t *head)
 
 	while (head != NULL)
 	{
-		size_t i;
 		for (i = 0; i < count; i++)
 		{
 			if (head == list[i])
