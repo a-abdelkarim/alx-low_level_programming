@@ -38,25 +38,25 @@ const listint_t **_reallocate_list(const listint_t **list, size_t size, const li
  */
 size_t print_listint_safe(const listint_t *head)
 {
-	size_t i, count = 0;
+	size_t i, num = 0;
 	const listint_t **list = NULL;
 
 	while (head != NULL)
 	{
-		for (i = 0; i < count; i++)
+		for (i = 0; i < num; i++)
 		{
 			if (head == list[i])
 			{
 				printf("-> [%p] %d\n", (void *)head, head->n);
 				free(list);
-				return (count);
+				return (num);
 			}
 		}
-		count++;
-		list = _reallocate_list(list, count, head);
+		num++;
+		list = _reallocate_list(list, num, head);
 		printf("[%p] %d\n", (void *)head, head->n);
 		head = head->next;
 	}
 	free(list);
-	return (count);
+	return (num);
 }
