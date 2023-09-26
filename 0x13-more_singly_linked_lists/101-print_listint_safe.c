@@ -3,15 +3,15 @@
 #include <stdio.h>
 
 /**
- * _reallocate_list - Reallocate memory for an a list of pointers to nodes
+ * _reallocate_list - reallocates memory for an array of pointers
+ * to the nodes in a linked list
+ * @list: the old list to append
+ * @size: size of the new list (always one more than the old list)
+ * @new: new node to add to the list
  *
- * @old_list: the old list to append
- * @size: the size of the new list
- * @new_node: new node to add to the new list
- *
- * Return: Pointer to the new list
+ * Return: pointer to the new list
  */
-const listint_t **_reallocate_list(const listint_t **list, size_t size, const listint_t *new_node)
+const listint_t **_reallocate_list(const listint_t **old_list, size_t size, const listint_t *new_node)
 {
 	const listint_t **new_list;
 	size_t i;
@@ -19,13 +19,13 @@ const listint_t **_reallocate_list(const listint_t **list, size_t size, const li
 	new_list = malloc(size * sizeof(listint_t *));
 	if (new_list == NULL)
 	{
-		free(list);
+		free(old_list);
 		exit(98);
 	}
 	for (i = 0; i < size - 1; i++)
-		new_list[i] = list[i];
+		new_list[i] = old_list[i];
 	new_list[i] = new_node;
-	free(list);
+	free(old_list);
 	return (new_list);
 }
 
