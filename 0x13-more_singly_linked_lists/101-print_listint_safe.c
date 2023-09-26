@@ -16,7 +16,7 @@ const listint_t **_reallocate_list(const listint_t **old_list, size_t size, cons
 	const listint_t **new_list;
 	size_t i;
 
-	new_list = malloc(size * sizeof(listint *));
+	new_list = malloc(size * sizeof(listint_t *));
 	if (new_list == NULL)
 	{
 		free(old_list);
