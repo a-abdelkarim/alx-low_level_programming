@@ -38,29 +38,29 @@ listint_t **_ra(listint_t **list, size_t size, listint_t *new)
  */
 size_t free_listint_safe(listint_t **head)
 {
-	size_t i, count = 0;
+	size_t i, num = 0;
 	listint_t **list = NULL;
 	listint_t *next;
 
 	if (head == NULL || *head == NULL)
-		return (count);
+		return (num);
 	while (*head != NULL)
 	{
-		for (i = 0; i < count; i++)
+		for (i = 0; i < num; i++)
 		{
 			if (*head == list[i])
 			{
 				*head = NULL;
 				free(list);
-				return (count);
+				return (num);
 			}
 		}
-		count++;
-		list = _ra(list, count, *head);
+		num++;
+		list = _ra(list, num, *head);
 		next = (*head)->next;
 		free(*head);
 		*head = next;
 	}
 	free(list);
-	return (count);
+	return (num);
 }
