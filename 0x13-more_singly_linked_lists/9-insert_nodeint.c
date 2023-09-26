@@ -7,7 +7,7 @@
  * @idx: New node index
  * @n: int data to be stored in the new node
  *
- * Return: Adrress of the new node, or NULL
+ * Return: Adrress of the new node
  */
 listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 {
