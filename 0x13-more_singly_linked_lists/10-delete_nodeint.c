@@ -10,7 +10,7 @@
  * Return: 1 if it succeeded, -1 if it failed
  */
 
-int delte_nodeint_at_index(listint_t **head, unsigned int index)
+int delete_nodeint_at_index(listint_t **head, unsigned int index)
 {
 	listint_t *current, *tmp;
 	unsigned int i;
