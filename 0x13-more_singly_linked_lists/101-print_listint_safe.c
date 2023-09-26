@@ -1,13 +1,13 @@
 #include "lists.h"
-#include <stdio.h>
 #include <stdlib.h>
+#include <stdio.h>
 
 /**
  * _reallocate_list - Reallocate memory for an a list of pointers to nodes
  *
  * @old_list: the old list to append
  * @size: the size of the new list
- * @new_node: ne node to add to the new list
+ * @new_node: new node to add to the new list
  *
  * Return: Pointer to the new list
  */
