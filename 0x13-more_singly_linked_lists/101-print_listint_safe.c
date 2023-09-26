@@ -30,11 +30,10 @@ const listint_t **_reallocate_list(const listint_t **old_list, size_t size, cons
 }
 
 /**
- * print_listint_safe - Prints a list safely.
+ * print_listint_safe - prints a listint_t linked list.
+ * @head: pointer to the start of the list
  *
- * @head: Pointer to the head of the list
- *
- * Return: Then number of the nodes in the list
+ * Return: the number of nodes in the list
  */
 size_t print_listint_safe(const listint_t *head)
 {
