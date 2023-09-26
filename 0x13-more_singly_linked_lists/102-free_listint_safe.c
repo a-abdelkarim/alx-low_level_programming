@@ -24,8 +24,8 @@ listint_t **_ra(listint_t **list, size_t size, listint_t *new)
 	}
 	for (i = 0; i < size - 1; i++)
 		new_list[i] = list[i];
-	new_list[i] = new
-	free(list)
+	new_list[i] = new;
+	free(list);
 	return (new_list);
 }
 
@@ -43,7 +43,7 @@ size_t free_listint_safe(listint_t **head)
 	listint_t *next;
 
 	if (head == NULL || *head == NULL)
-		return (count)
+		return (count);
 	while (*head != NULL)
 	{
 		for (i = 0; i < count; i++)
