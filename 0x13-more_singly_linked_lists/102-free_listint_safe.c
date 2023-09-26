@@ -3,7 +3,7 @@
 #include <stdio.h>
 
 /**
- * _ra - Reallocates memory for an array of pointers to the nodes in a linked list
+ * _r - Reallocates memory for an array of pointers to the nodes in a linked list
  *
  * @list: The old list to append
  * @size: Size of the new list
@@ -11,7 +11,7 @@
  *
  * Return: Pointer to the new list
  */
-listint_t **_ra(listint_t **list, size_t size, listint_t *new)
+listint_t **_r(listint_t **list, size_t size, listint_t *new)
 {
 	listint_t **new_list;
 	size_t i;
@@ -56,7 +56,7 @@ size_t free_listint_safe(listint_t **head)
 			}
 		}
 		count++;
-		list = _ra(list, count, *head);
+		list = _r(list, count, *head);
 		next = (*head)->next;
 		free(*head);
 		*head = next;
