@@ -3,7 +3,7 @@
 #include <stdio.h>
 
 /**
- * _r - Reallocates memory for an array of pointers to the nodes in a linked list
+ * _ra - Reallocates memory for an array of pointers to the nodes in a linked list
  *
  * @list: The old list to append
  * @size: Size of the new list
