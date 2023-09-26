@@ -30,7 +30,7 @@ const listint_t **_reallocate_list(const listint_t **old_list, size_t size, cons
 }
 
 /**
- * print_listint_safe - Prints a listint_t list safely.
+ * print_listint_safe - Prints a list safely.
  *
  * @head: Pointer to the head of the list
  *
