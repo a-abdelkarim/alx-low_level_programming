@@ -7,16 +7,16 @@
  *
  *  Return: Data (n) of the head node, or 0 if the list is empty.
  */
-int pop_listint(listint_t, **head)
+int pop_listint(listint_t **head)
 {
-	listint_t *start;
+	listint_t *tmp;
 	int n;
 
 	if (head == NULL || *head == NULL)
 		return (0);
-	start = *head;
+	tmp = *head;
 	n = tmp->n;
-	*head = start->next;
-	free(start);
+	*head = tmp->next;
+	free(tmp);
 	return (n);
 }
