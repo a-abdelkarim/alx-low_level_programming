@@ -5,13 +5,13 @@
 /**
  * _r - reallocates memory for an array of pointers
  * to the nodes in a linked list
- * @old_list: the old list to append
+ * @list: the old list to append
  * @size: size of the new list (always one more than the old list)
  * @new: new node to add to the list
  *
  * Return: pointer to the new list
  */
-const listint_t **_r(const listint_t **old_list, size_t size, const listint_t *new)
+const listint_t **_r(const listint_t **list, size_t size, const listint_t *new)
 {
 	const listint_t **new_list;
 	size_t i;
@@ -19,13 +19,13 @@ const listint_t **_r(const listint_t **old_list, size_t size, const listint_t *n
 	new_list = malloc(size * sizeof(listint_t *));
 	if (new_list == NULL)
 	{
-		free(old_list);
+		free(list);
 		exit(98);
 	}
 	for (i = 0; i < size - 1; i++)
-		new_list[i] = old_list[i];
+		new_list[i] = list[i];
 	new_list[i] = new;
-	free(old_list);
+	free(list);
 	return (new_list);
 }
 
