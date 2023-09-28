@@ -5,5 +5,6 @@
 #include <stdlib.h>
 
 unsigned int binary_to_uint(const char *b);
+void print_binary(usigned long int n);
 
 #endif /* MAIN_H */
