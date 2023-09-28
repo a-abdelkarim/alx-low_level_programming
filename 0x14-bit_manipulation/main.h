@@ -6,3 +6,5 @@
 
 int _putcher(const char *b);
 unsigned int binary_to_unit(const char *b);
+
+#endif
