@@ -16,7 +16,8 @@ unsigned int binary_to_unit(const char *b)
 		return (0);
 	while (b[i] != '\0')
 	{
-		char c = b[i]
+		char c = b[i];
+
 		if (c == '0' || c == '1')
 		{
 			result = result * 2 + (c - '0');
