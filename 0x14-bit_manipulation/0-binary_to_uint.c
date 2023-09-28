@@ -7,7 +7,6 @@
  *
  * Return: the converted number, or 0 if there is an error
  */
-
 unsigned int binary_to_unit(const char *b)
 {
 	int i = 0;
