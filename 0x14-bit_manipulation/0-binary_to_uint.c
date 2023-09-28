@@ -15,12 +15,18 @@ unsigned int binary_to_unit(const char *b)
 
 	if (b == NULL)
 		return (0);
-	while (*b)
+	while (b[i] != '\0')
 	{
-		if (*b != '0' && *b != '1')
-			return (0);
-		result = (result * 2) + (*b - '0');
-		b++
+		char c = b[i]
+		if (c == '0' || c == '1')
+		{
+			result = result * 2 + (c - '0');
+		}
+		else
+		{
+			return (0)
+		}
+		i++
 	}
 	return (result);
 }
