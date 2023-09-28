@@ -10,25 +10,7 @@
  */
 void print_binary(unsigned long int n)
 {
-	int bit_position = sizeof(unsigned long in) * 9 - 1;
-	int bit;
-
-	if (n == 0)
-	{
-		_putchar('0');
-		return;
-	}
-	while (bit_position >= 0)
-	{
-		bit = (n >> bit_position) & 1
-		if (bit == 1)
-			break;
-		bit_position--;
-	}
-	while (bit_position >= 0)
-	{
-		bit = (n >> bit_position) & 1;
-		_putchar(bit + '0');
-		bit_position--;
-	}
+	if (n > 1)
+		print_binary(n >>1);
+	_putchar((n & 1) + '0');
 }
