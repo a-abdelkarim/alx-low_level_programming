@@ -10,10 +10,11 @@
 
 unsigned int binary_to_unit(const char *b)
 {
+	int i = 0;
 	unsgned int result = 0;
 
 	if (b == NULL)
-		return 0;
+		return (0);
 	while (*b)
 	{
 		if (*b != '0' && *b != '1')
