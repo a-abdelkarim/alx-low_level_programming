@@ -15,7 +15,7 @@ void print_binary(unsigned long int n)
 
 	if (n == 0)
 	{
-		putchar('0');
+		_putchar('0');
 		return;
 	}
 	while (bit_position >= 0)
@@ -28,7 +28,7 @@ void print_binary(unsigned long int n)
 	while (bit_position >= 0)
 	{
 		bit = (n >> bit_position) & 1;
-		putchar(bit + '0');
+		_putchar(bit + '0');
 		bit_position--;
 	}
 }
