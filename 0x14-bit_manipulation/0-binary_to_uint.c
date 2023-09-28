@@ -13,7 +13,9 @@ unsigned int binary_to_unit(const char *b)
 	unsigned int result = 0;
 
 	if (b == NULL)
+	{
 		return (0);
+	}
 	while (b[i] != '\0')
 	{
 		char c = b[i];
@@ -24,9 +26,9 @@ unsigned int binary_to_unit(const char *b)
 		}
 		else
 		{
-			return (0)
+			return (0);
 		}
-		i++
+		i++;
 	}
 	return (result);
 }
