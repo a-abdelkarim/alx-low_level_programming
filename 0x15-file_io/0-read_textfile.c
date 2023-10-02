@@ -3,7 +3,7 @@
 
 /**
  * read_textfile - reads the text file and show it
- * 
+ *
  * @filename: pointer to the file name
  * @letters: the letters number the function will read and print
  *
