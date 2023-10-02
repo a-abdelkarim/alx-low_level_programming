@@ -7,7 +7,7 @@
  * @filename: pointer to the file name
  * @letters: the letters number the function will read and print
  *
- * Return: 0 if there is an issue ot the number of bytes
+ * Return: returns 0 if there is an isne ot the number of bytes
  */
 ssize_t read_textfile(const char *filename, size_t letters)
 {
