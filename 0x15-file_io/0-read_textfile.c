@@ -7,11 +7,11 @@
  * @filename: pointer to the file name
  * @letters: the letters number the function will read and print
  *
- * Return: returns 0 if there is an isne ot the number of bytes
+ * Return: returns 0 if there is an issue or the number of bytes
  */
 ssize_t read_textfile(const char *filename, size_t letters)
 {
-	ssize_t fd, r, w;
+	ssize_t fd, bread, bwritten;
 	char *buffer;
 
 	if (filename == NULL)
@@ -22,10 +22,10 @@ ssize_t read_textfile(const char *filename, size_t letters)
 		return (0);
 
 	fd = open(filename, O_RDONLY);
-	r = read(fd, buffer, letters);
-	w = write(STDOUT_FILENO, buffer, r);
+	bread = read(fd, buffer, letters);
+	bwritten = write(STDOUT_FILENO, buffer, bread);
 
-	if (fd == -1 || r == -1 || w == -1 || w != r)
+	if (fd == -1 || bread== -1 || bwritten == -1 || bwritten != bread)
 	{
 		free(buffer);
 		return (0);
@@ -33,5 +33,5 @@ ssize_t read_textfile(const char *filename, size_t letters)
 
 	free(buffer);
 	close(fd);
-	return (w);
+	return (bwritten);
 }
