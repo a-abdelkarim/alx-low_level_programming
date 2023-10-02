@@ -16,17 +16,21 @@ ssize_t read_textfile(const char *filename, size_t letters)
 
 	if (filename == NULL)
 		return (0);
+
 	buffer = malloc(sizeof(char) * letters);
 	if (buffer == NULL)
 		return (0);
+
 	fd = open(filename, O_RDONLY);
 	bread = read(fd, buffer, letters);
 	bwritten = write(STDOUT_FILENO, buffer, bread);
+
 	if (fd == -1 || bread == -1 || bwritten == -1 || bwritten != bread)
 	{
 		free(buffer);
 		return (0);
 	}
+
 	free(buffer);
 	close(fd);
 	return (bwritten);
