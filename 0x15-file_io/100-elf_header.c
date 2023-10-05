@@ -17,17 +17,17 @@ void printEntryPointAddress(Elf64_Ehdr *header);
 
 int main(int argc, char **argv)
 {
-    int fileDescriptor, bytesRead;
-    Elf64_Ehdr elfHeader;
+	int fileDescriptor, bytesRead;
+	Elf64_Ehdr elfHeader;
 
-    if (argc != 2)
-    {
-        dprintf(STDERR_FILENO, "Usage: elf_header elf_filename\n");
-        exit(98);
-    }
-
-    fileDescriptor = open(argv[1], O_RDONLY);
-    if (fileDescriptor == -1)
+	if (argc != 2)
+	{
+		dprintf(STDERR_FILENO, "Usage: elf_header elf_filename\n");
+		exit(98);
+	}
+	
+	fileDescriptor = open(argv[1], O_RDONLY);
+	if (fileDescriptor == -1)
     {
         dprintf(STDERR_FILENO, "Failed to open file\n");
         exit(98);
@@ -57,7 +57,7 @@ int main(int argc, char **argv)
     printEntryPointAddress(&elfHeader);
 
     closeFile(fileDescriptor);
-    return 0;
+    return (0);
 }
 
 void printEntryPointAddress(Elf64_Ehdr *header)
@@ -244,9 +244,9 @@ int isElfFile(Elf64_Ehdr *header)
             header->e_ident[i] != 'L' &&
             header->e_ident[i] != 'F')
         {
-            return 0;
+            return (0);
         }
     }
-    return 1;
+    return (1);
 }
 
