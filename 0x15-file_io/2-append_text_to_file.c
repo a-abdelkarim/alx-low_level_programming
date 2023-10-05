@@ -38,10 +38,9 @@ int append_text_to_file(const char *filename, char *text_content)
 	{
 		lseek(o, 0, SEEK_END);
 		length = write(o, text_content, _strlen(text_content));
+		if (length < 0)
+			return (-1);
 	}
-	close(o);
 
-	if (length < 0)
-		return (-1);
 	return (1);
 }
