@@ -6,8 +6,6 @@
 
 #define BUFSIZE 1024
 
-void close_file(int file);
-
 /**
  * main - copies the content of one file to another file
  * @argc: the number of cmd arguments
@@ -17,10 +15,8 @@ void close_file(int file);
  */
 int main(int argc, char *argv[])
 {
-	int fd_from, fd_to, num_bytes, times = 1;
-	size_t read_bytes = 0, write_bytes = 0;
+	int fd_from, fd_to, num_bytes;
 	char buffer[BUFSIZE];
-	mode_t permissions = S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP | S_IROTH;
 
 	if (argc != 3)
 	{
