@@ -17,8 +17,10 @@ void close_file(int file);
  */
 int main(int argc, char *argv[])
 {
-	int fd_from, fd_to, num_bytes;
+	int fd_from, fd_to, times = 1;
+	size_t read_bytes = 0, write_bytes = 0;
 	char buffer[BUFSIZE];
+	mode_t permissions = S_IRUSR | S_IWUSR | I_IRGRP | S_IWGRP | S_IROTH;
 
 	if (argc != 3)
 	{
@@ -27,9 +29,9 @@ int main(int argc, char *argv[])
 	}
 
 	fd_from = open(argv[1], O_RDONLY);
-	if (fd_from == -1)
+	if (fd_from < 0)
 	{
-		dprintf(STDERR_FILENO, "Error: Cannot read from file %s\n", argv[1]);
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
 		exit(98);
 	}
 
