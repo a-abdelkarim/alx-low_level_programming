@@ -49,7 +49,7 @@ int main(int argc, char *argv[])
 			close_file(file_from);
 			exit(98);
 		}
-		write_bytes = write(file_to, buffer, buffer_size);
+		write_bytes = write(file_to, buffer, read_bytes);
 		if (write_bytes < 0)
 		{
 			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
