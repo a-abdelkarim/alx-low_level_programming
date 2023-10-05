@@ -15,7 +15,7 @@ void close_file(int file);
  */
 int main(int argc, char *argv[])
 {
-	int fd_from, fd_to, times = 1, buffer_size = 1024;
+	int file_from, file_to, times = 1, buffer_size = 1024;
 	char buffer[1024];
 	ssize_t read_bytes = 0, write_bytes = 0;
 	mode_t permissions = S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP | S_IROTH;
@@ -26,45 +26,44 @@ int main(int argc, char *argv[])
 		exit(97);
 	}
 
-	fd_from = open(argv[1], O_RDONLY);
-	if (fd_from < 0)
+	file_from = open(argv[1], O_RDONLY);
+	if (file_from < 0)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
 		exit(98);
 	}
 
-	fd_to = open(argv[2], O_WRONLY | O_CREAT | O_TRUNC, permissions);
-	if (fd_to < 0)
+	file_to = open(argv[2], O_WRONLY | O_CREAT | O_TRUNC, permissions);
+	if (file_to < 0)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
-		close(fd_from);
 		exit(99);
 	}
 
 	while (1)
 	{
-		read_bytes = read(fd_from, buffer, buffer_size);
+		read_bytes = read(file_from, buffer, buffer_size);
 		if (read_bytes < 0)
 		{
 			dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
-			close_file(fd_from);
+			close_file(file_from);
 			exit(98);
 		}
-		write_bytes = write(fd_to, buffer, buffer_size);
+		write_bytes = write(file_to, buffer, buffer_size);
 		if (write_bytes < 0)
 		{
 			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
-			close(fd_to);
+			close_file(file_to);
 			exit(98);
 		}
 		if (read_bytes < buffer_size)
 			break;
-		lseek(fd_to, 0, SEEK_END);
-		lseek(fd_from, buffer_size * times, SEEK_SET);
+		lseek(file_to, 0, SEEK_END);
+		lseek(file_from, buffer_size * times, SEEK_SET);
 		times++;
 	}
-	close_file(fd_from);
-	close_file(fd_to);
+	close_file(file_from);
+	close_file(file_to);
 	return (0);
 }
 
