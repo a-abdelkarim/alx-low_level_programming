@@ -54,7 +54,7 @@ int main(int argc, char *argv[])
 		{
 			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
 			close_file(file_to);
-			exit(98);
+			exit(99);
 		}
 		if (read_bytes < buffer_size)
 			break;
