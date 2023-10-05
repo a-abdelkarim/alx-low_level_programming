@@ -4,8 +4,6 @@
 #include <fcntl.h>
 #include <errno.h>
 
-#define BUFSIZE 1024
-
 void close_file(int file);
 
 /**
@@ -17,8 +15,8 @@ void close_file(int file);
  */
 int main(int argc, char *argv[])
 {
-	int fd_from, fd_to, num_bytes, times = 1;
-	char buffer[BUFSIZE];
+	int fd_from, fd_to, num_bytes, times = 1, buffer_size = 1024;
+	char buffer[buffer_size];
 	ssize_t read_bytes = 0, write_bytes = 0;
 	mode_t permissions = S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP | S_IROTH;
 
@@ -45,24 +43,24 @@ int main(int argc, char *argv[])
 
 	while (1)
 	{
-		read_bytes = read(fd_from, buffer, BUFSIZE);
+		read_bytes = read(fd_from, buffer, buffer_size);
 		if (read_bytes < 0)
 		{
 			dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
 			close_file(fd_from);
 			exit(98);
 		}
-		write_bytes = write(fd_to, buffer, BUFSIZE);
+		write_bytes = write(fd_to, buffer, buffer_size);
 		if (write_bytes < 0)
 		{
 			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
 			close(fd_to);
 			exit(98);
 		}
-		if (read_bytes < BUFSIZE)
+		if (read_bytes < buffer_size)
 			break;
 		lseek(fd_to, 0, SEEK_END);
-		lseek(fd_from, BUFSIZE * times, SEEK_SET);
+		lseek(fd_from, buffer_size * times, SEEK_SET);
 		times++;
 	}
 	close_file(fd_from);
