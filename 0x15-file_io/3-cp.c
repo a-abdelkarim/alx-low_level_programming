@@ -16,7 +16,7 @@ void close_file(int file);
 int main(int argc, char *argv[])
 {
 	int fd_from, fd_to, num_bytes, times = 1, buffer_size = 1024;
-	char buffer[buffer_size];
+	char buffer[1024];
 	ssize_t read_bytes = 0, write_bytes = 0;
 	mode_t permissions = S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP | S_IROTH;
 
