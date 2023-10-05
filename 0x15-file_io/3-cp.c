@@ -20,7 +20,7 @@ int main(int argc, char *argv[])
 	int fd_from, fd_to, num_bytes, times = 1;
 	size_t read_bytes = 0, write_bytes = 0;
 	char buffer[BUFSIZE];
-	mode_t permissions = S_IRUSR | S_IWUSR | _IRGRP | S_IWGRP | S_IROTH;
+	mode_t permissions = S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP | S_IROTH;
 
 	if (argc != 3)
 	{
